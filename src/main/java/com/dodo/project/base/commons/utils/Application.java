@@ -1,5 +1,7 @@
 package com.dodo.project.base.commons.utils;
 
+import java.math.BigDecimal;
+
 /*
 * @Description: 定义空的main文件
 * @Author: walk_code walk_code@163.com
@@ -9,6 +11,5 @@ package com.dodo.project.base.commons.utils;
 */
 public class Application{
 	public static void main(String [] agrs) {
-
 	}
 }
