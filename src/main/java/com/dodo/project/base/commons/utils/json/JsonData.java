@@ -4,6 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 /*
  * <b>JsonData</b></br>
  *
@@ -164,47 +168,103 @@ public class JsonData {
 	}
 
 	/*
-	* @Description: 通过key获取json对象char类型的值
-	* @Author: walk_code walk_code@163.com
-	* @Param: [key]
-	* @return: char
-	* @Date: 2019/5/31 18:40
-	*/
+	 * @Description: 通过key获取json对象char类型的值
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: [key]
+	 * @return: char
+	 * @Date: 2019/5/31 18:40
+	 */
 	public boolean getBoolean(String key) {
-		if (null == jsonObject){
-			return  false;
+		if (null == jsonObject) {
+			return false;
 		}
 
 		return jsonObject.getBooleanValue(key);
 	}
-	
-	/* 
-	* @Description: 通过key获取JsonData对象
-	* @Author: walk_code walk_code@163.com
-	* @Param: [key] 
-	* @return: com.dodo.project.base.commons.utils.json.JsonData  
-	* @Date: 2019/5/31 18:44
-	*/ 
-	public JsonData toMap(String key){
-		if (null != jsonObject){
+
+	/*
+	 * @Description: 通过key获取JsonData对象
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: [key]
+	 * @return: com.dodo.project.base.commons.utils.json.JsonData
+	 * @Date: 2019/5/31 18:44
+	 */
+	public JsonData toMap(String key) {
+		if (null != jsonObject) {
 			this.jsonObject = jsonObject.getJSONObject(key);
 		}
 
 		return this;
 	}
-	
-	/* 
-	* @Description: 通过key获取JsonData对象 
-	* @Author: walk_code walk_code@163.com
-	* @Param: [key] 
-	* @return: com.dodo.project.base.commons.utils.json.JsonData  
-	* @Date: 2019/5/31 18:46
-	*/ 
-	public JsonData toArray(String key){
-		if (null != jsonObject){
+
+	/*
+	 * @Description: 通过key获取JsonData对象
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: [key]
+	 * @return: com.dodo.project.base.commons.utils.json.JsonData
+	 * @Date: 2019/5/31 18:46
+	 */
+	public JsonData toArray(String key) {
+		if (null != jsonObject) {
 			this.jsonArray = jsonObject.getJSONArray(key);
 		}
 
 		return this;
+	}
+
+	/*
+	 * @Description: 获取json对象
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: []
+	 * @return: java.util.Map<java.lang.String,java.lang.Object>
+	 * @Date: 2019/6/1 17:03
+	 */
+	public Map<String, Object> getMap() {
+		return this.jsonObject;
+	}
+
+	/*
+	 * @Description: 获取指定bean类型的list
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: [tClass]
+	 * @return: java.util.List<T>
+	 * @Date: 2019/6/1 17:10
+	 */
+	public <T> List<T> getList(Class<T> tClass) {
+		if (null == this.jsonObject) {
+			return new ArrayList<T>();
+		}
+
+		return this.jsonArray.toJavaList(tClass);
+	}
+
+	/*
+	 * @Description: 根据下标获取数组中指定项
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: [index]
+	 * @return: com.dodo.project.base.commons.utils.json.JsonData
+	 * @Date: 2019/6/1 17:14
+	 */
+	public JsonData getItem(int index) {
+		if (null != jsonArray) {
+			this.jsonObject =  this.jsonArray.getJSONObject(index);
+		}
+
+		return this;
+	}
+
+	/*
+	 * @Description: 获取List大小
+	 * @Author: walk_code walk_code@163.com
+	 * @Param: []
+	 * @return: int
+	 * @Date: 2019/6/1 17:15
+	 */
+	public int getListSize() {
+		if (null != jsonArray) {
+			return this.jsonArray.size();
+		}
+
+		return 0;
 	}
 }

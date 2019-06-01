@@ -12,7 +12,7 @@
 |工具类名称 | 描述 | 完成度|
 |:------------- | :----------- | :-----|
 |com.dodo.project.base.commons.utils.json.JsonHelper | json数据转化工具类 | <ul><li>- [x] 完成</li></ul>|
-|com.dodo.project.base.commons.utils.json.JsonData | json数据解析工具类 | <ul><li>- [ ] 完成</li></ul>|
+|com.dodo.project.base.commons.utils.json.JsonData | json数据解析工具类 | <ul><li>- [x] 完成</li></ul>|
 |com.dodo.project.base.commons.utils.encrypt.Des3Helper | 3des数据加解密工具类 | <ul><li>- [x] 完成</li></ul>|
 |com.dodo.project.base.commons.utils.builtTreeData.TreeDataBuilderHelper | json tree生成工具类 | <ul><li>- [x] 完成</li></ul>|
 |com.dodo.project.base.commons.utils.encrypt.RsaHelper |rsa加解密辅助类| <ul><li>- [x] 完成</li></ul>|
