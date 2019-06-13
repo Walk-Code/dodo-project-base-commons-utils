@@ -1,5 +1,5 @@
 package com.dodo.project.base.commons.utils.builtTreeData;
-/** 
+/*
 * @Description: 树数据生成器 
 * @Author: walk_code walk_code@163.com
 * @Param:  
@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 public class TreeDataBuilderHelper<T> {
 	List<T>				  treeDataBean = new ArrayList<T>();
-	private static Logger log		   = LoggerFactory.getLogger(TreeDataBuilderHelper.class);
 	
 	public TreeDataBuilderHelper() {
 		
@@ -99,7 +98,7 @@ public class TreeDataBuilderHelper<T> {
 				field.set(topicTreeNodeBean, children);
 			}
 			catch (Exception e) {
-				log.error("获取类属性失败，{}", e);
+				throw new RuntimeException("获取类属性失败");
 			}
 			
 		}
@@ -139,7 +138,7 @@ public class TreeDataBuilderHelper<T> {
 			}
 		}
 		catch (Exception e) {
-			log.error("获取子节点数据失败：{}", e);
+			throw new RuntimeException("获取子节点数据失败");
 		}
 		
 		return childNodes;
@@ -172,7 +171,7 @@ public class TreeDataBuilderHelper<T> {
 				}
 			}
 			catch (Exception e) {
-				log.error("获取父节点失败：{}", e);
+				throw new RuntimeException("获取父节点失败");
 			}
 		}
 		

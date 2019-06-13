@@ -20,6 +20,7 @@
 |com.dodo.project.base.commons.utils.arithmetic.ArithmeticHelper |精度处理辅助类| <ul><li>- [x] 完成</li></ul>|
 |  |http 请求辅助类| <ul><li>- [ ] 完成</li></ul>|
 |  |文件操作辅助类| <ul><li>- [ ] 完成</li></ul>|
+|  |Latex转图片辅助类| <ul><li>- [x] 完成</li></ul>|
 |com.dodo.project.base.commons.utils.IpHelperTest  |ip操作辅助类| <ul><li>- [x] 完成</li></ul>|
 
 > 使用示例（查看相关的单元测试）

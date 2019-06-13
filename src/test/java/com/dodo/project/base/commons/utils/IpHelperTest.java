@@ -18,7 +18,7 @@ import org.junit.Test;
 public class IpHelperTest {
 	@Test
 	public void isLocalIp() {
-		String localIp = "192.168.3.18";
+		String localIp = "192.168.3.19";
 		Assert.assertTrue("该IP不是本地IP", IpHelper.isLocalIp(localIp));
 	}
 

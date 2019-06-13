@@ -59,11 +59,11 @@ public class RSAKeyPairGenerator {
 		return publicKey;
 	}
 
-	public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
+	/*public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
 		RSAKeyPairGenerator keyPairGenerator = new RSAKeyPairGenerator();
 		keyPairGenerator.writeToFile("RSA/publicKey", keyPairGenerator.getPublicKey().getEncoded());
 		keyPairGenerator.writeToFile("RSA/privateKey", keyPairGenerator.getPrivateKey().getEncoded());
 		System.out.println(Base64.getEncoder().encodeToString(keyPairGenerator.getPublicKey().getEncoded()));
 		System.out.println(Base64.getEncoder().encodeToString(keyPairGenerator.getPrivateKey().getEncoded()));
-	}
+	}*/
 }
